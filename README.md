@@ -35,11 +35,17 @@ git commit -m "your message here"
 git push origin main
 git pull
 Project Structure
-bash
+pgsql
 Copy code
 datafun-05-sql/
 ├─ .gitignore
 ├─ README.md
 ├─ requirements.txt
-├─ src/            # will hold Python scripts (db_create, db_queries, etc.)
-└─ data/           # will hold database files (.db) and sample CSVs
+├─ create_tables.sql     # SQL to create authors/books tables
+├─ init_db.py            # Python script to initialize project.sqlite3
+├─ project.sqlite3       # SQLite database file (created after running init_db.py)
+├─ data/
+│  ├─ authors.csv
+│  └─ books.csv
+└─ sql_create/
+   └─ 03_insert_records.sql  # example from instructor repo
