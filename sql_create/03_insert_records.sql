@@ -1,15 +1,25 @@
--- Insert records into the authors table first
-INSERT INTO authors (author_id, name, birth_year, nationality) VALUES
-    ('AUTHOR_001', 'J.K. Rowling', 1965, 'British'),
-    ('AUTHOR_002', 'George Orwell', 1903, 'British'),
-    ('AUTHOR_003', 'Harper Lee', 1926, 'American');
+-- Insert authors (matches: author_id, first, last)
+INSERT INTO authors (author_id, first, last) VALUES
+('a01','Harper','Lee'),
+('a02','George','Orwell'),
+('a03','F. Scott','Fitzgerald'),
+('a04','Aldous','Huxley'),
+('a05','J.D.','Salinger'),
+('a06','Ray','Bradbury'),
+('a07','Jane','Austen'),
+('a08','J.R.R.','Tolkien'),
+('a09','J.K.','Rowling'),
+('a10','Mark','Twain');
 
--- Insert records into the books table
--- And include foreign key references to the authors table
--- IMPORTANT: No tic marks inside a string, use two single quotes to escape a single quote
-INSERT INTO books (book_id, title, genre, publication_year, author_id) VALUES
-    ('BOOK_001', 'Harry Potter and the Sorcerer''s Stone', 'Fantasy', 1997, 'AUTHOR_001'),
-    ('BOOK_002', 'Harry Potter and the Chamber of Secrets', 'Fantasy', 1998, 'AUTHOR_001'),
-    ('BOOK_003', '1984', 'Dystopian', 1949, 'AUTHOR_002'),
-    ('BOOK_004', 'Animal Farm', 'Political Satire', 1945, 'AUTHOR_002'),
-    ('BOOK_005', 'To Kill a Mockingbird', 'Fiction', 1960, 'AUTHOR_003');
+-- Insert books (matches: book_id, title, year_published, author_id)
+INSERT INTO books (book_id, title, year_published, author_id) VALUES
+('b01','To Kill a Mockingbird',1960,'a01'),
+('b02','1984',1949,'a02'),
+('b03','The Great Gatsby',1925,'a03'),
+('b04','Brave New World',1932,'a04'),
+('b05','The Catcher in the Rye',1951,'a05'),
+('b06','Fahrenheit 451',1953,'a06'),
+('b07','Pride and Prejudice',1813,'a07'),
+('b08','The Hobbit',1937,'a08'),
+('b09','The Lord of the Rings',1954,'a08'),
+('b10','Harry Potter and the Philosopher''s Stone',1997,'a09');
