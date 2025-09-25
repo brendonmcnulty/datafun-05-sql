@@ -1,51 +1,69 @@
-# datafun-05-sql
+# DataFun-05-SQL
 
-This project introduces working with **SQL** inside Python using the built-in `sqlite3` module.  
-We’ll create and manage a lightweight, file-based database (SQLite) and practice writing SQL queries in Python scripts.
+This project integrates **Python and SQL** using the built-in `sqlite3` library and a lightweight SQLite database.  
+It demonstrates how to create a schema, insert records, update and delete data, and run SQL queries from Python.
 
 ---
 
-## Getting Started
+## Project Progress
 
-### 1. Clone the Repo
-```bash
-git clone https://github.com/<your-username>/datafun-05-sql.git
-cd datafun-05-sql
-2. Create and Activate Virtual Environment
-bash
-Copy code
-# Windows PowerShell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+- [ ] Step 1–3: Project Setup  
+  - Repo created (`datafun-05-sql`) with default `README.md`.  
+  - `.gitignore` and `requirements.txt` added and pushed.  
+  - Virtual environment `.venv` created and activated.  
+  - Dependencies installed from `requirements.txt`.  
 
-# Mac/Linux
-python3 -m venv .venv
-source .venv/bin/activate
-3. Install Requirements
-bash
-Copy code
-pip install --upgrade pip
-pip install -r requirements.txt
-4. Git Commands (repeat often)
-bash
-Copy code
-git status
-git add .
-git commit -m "your message here"
-git push origin main
-git pull
-Project Structure
-pgsql
-Copy code
+- [ ] Step 4: Schema Design and Database Initialization  
+  - Added `sql_create/01_drop_tables.sql` (drops existing tables).  
+  - Added `sql_create/02_create_tables.sql` (creates `authors` and `books` tables).  
+  - Added `sql_create/03_insert_records.sql` (inserts at least 10 authors and 10 books).  
+  - Created `db01_setup.py` to run these scripts in order and initialize `project.sqlite3`.  
+  - Verified tables and data in VS Code using **SQLite Viewer (Florian Klampfer)**.  
+
+- [ ] Step 5: Cleaning and Feature Engineering  
+  - Added `sql_features/update_records.sql` (demonstrates UPDATEs).  
+  - Added `sql_features/delete_records.sql` (demonstrates DELETEs).  
+  - Created `db02_features.py` to apply these scripts.  
+  - Verified changes in SQLite Viewer:  
+    - Corrected title for *Harry Potter and the Philosopher's Stone* (`b10`).  
+    - Updated publication year for *1984* (`b02`).  
+    - Deleted *Fahrenheit 451* (`b06`).  
+
+- [ ] Step 6: Queries and Aggregations  
+  - Added `sql_queries/query_aggregation.sql` (COUNT, MIN, MAX).  
+  - Added `sql_queries/query_filter.sql` (WHERE filter).  
+  - Added `sql_queries/query_sorting.sql` (ORDER BY).  
+  - Added `sql_queries/query_group_by.sql` (GROUP BY with JOIN).  
+  - Added `sql_queries/query_join.sql` (INNER JOIN).  
+  - Created `db03_queries.py` to run these SQL queries and print results to the terminal.
+
+---
+
+## Project Structure
 datafun-05-sql/
-├─ .gitignore
-├─ README.md
-├─ requirements.txt
-├─ create_tables.sql     # SQL to create authors/books tables
-├─ init_db.py            # Python script to initialize project.sqlite3
-├─ project.sqlite3       # SQLite database file (created after running init_db.py)
-├─ data/
-│  ├─ authors.csv
-│  └─ books.csv
-└─ sql_create/
-   └─ 03_insert_records.sql  # example from instructor repo
+├── sql_create/
+│ ├── 01_drop_tables.sql
+│ ├── 02_create_tables.sql
+│ └── 03_insert_records.sql
+├── sql_features/
+│ ├── update_records.sql
+│ └── delete_records.sql
+├── sql_queries/
+│ ├── query_aggregation.sql
+│ ├── query_filter.sql
+│ ├── query_sorting.sql
+│ ├── query_group_by.sql
+│ └── query_join.sql
+├── db01_setup.py
+├── db02_features.py
+├── db03_queries.py
+├── project.sqlite3
+├── data/
+│ ├── authors.csv
+│ └── books.csv
+├── .gitignore
+├── README.md
+└── requirements.txt
+
+---
+
